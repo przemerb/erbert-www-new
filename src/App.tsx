@@ -13,7 +13,7 @@ function App() {
     // Symulacja ładowania dla czystego efektu wejścia
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 1000);
+    }, 500);
     return () => clearTimeout(timer);
   }, []);
 

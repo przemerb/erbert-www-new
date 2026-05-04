@@ -10,6 +10,8 @@ import {
   ExternalLink,
   Heart,
 } from "lucide-react";
+import SEO from "../components/SEO";
+import LocalBusinessSchema from "../components/LocalBusinessSchema";
 
 export default function HomePage() {
   const reviews = [
@@ -66,7 +68,14 @@ export default function HomePage() {
   ];
 
   return (
-    <div className="w-full pb-16">
+    <>
+      <SEO
+        title="Endokrynolog Grzegorz Erbert"
+        description="Grzegorz Erbert – Endokrynolog w Kluczborku. Specjalizuję się w diagnozowaniu i leczeniu schorzeń hormonalnych, oferując indywidualne podejście do każdego pacjenta."
+        canonical="https://erbert.pl/"
+      />
+      <LocalBusinessSchema />
+      <div className="w-full pb-16">
       {/* Hero Section */}
       <section className="relative -mt-20 md:-mt-24 min-h-[85vh] md:min-h-[90vh] flex items-end md:items-center overflow-hidden mb-12 md:mb-20">
         <img
@@ -327,6 +336,7 @@ export default function HomePage() {
 
           <div className="w-full lg:w-1/2 min-h-[400px] lg:min-h-auto relative rounded-3xl overflow-hidden shadow-inner">
             <iframe
+              title="Mapa dojazdu do gabinetu endokrynologicznego Grzegorz Erbert w Kluczborku"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2512.196297179876!2d18.20852197658837!3d50.9755621716972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47106105c84ea6a9%3A0xa4637ae05c2bea27!2sEndokrynolog%20-%20lek.%20med.%20Grzegorz%20Erbert!5e0!3m2!1sen!2spl!4v1721225228999!5m2!1sen!2spl"
               className="absolute inset-0 w-full h-full border-0"
               loading="lazy"
@@ -336,5 +346,6 @@ export default function HomePage() {
         </div>
       </section>
     </div>
+    </>
   );
 }

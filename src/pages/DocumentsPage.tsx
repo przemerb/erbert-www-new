@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ExternalLink, FileText, Download, Shield } from 'lucide-react';
+import SEO from '../components/SEO';
 
 export default function DocumentsPage() {
   const partners = [
@@ -20,6 +21,12 @@ export default function DocumentsPage() {
   ];
 
   return (
+    <>
+      <SEO
+        title="Dokumenty i Współpraca"
+        description="Dokumenty dla pacjentów: informacja RODO, prawa pacjenta. Lista współpracujących podmiotów medycznych. Prywatna praktyka endokrynologiczna Grzegorz Erbert."
+        canonical="https://erbert.pl/dokumenty"
+      />
     <div className="w-full pb-24 pt-12 md:pt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
@@ -119,5 +126,6 @@ export default function DocumentsPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }

@@ -1,8 +1,15 @@
 import { motion } from "framer-motion";
 import { Stethoscope, Activity, Syringe, Check, Plus } from "lucide-react";
+import SEO from "../components/SEO";
 
 export default function PricingPage() {
   return (
+    <>
+      <SEO
+        title="Cennik Usług"
+        description="Cennik wizyt endokrynologicznych w Kluczborku. Wizyta pierwszorazowa, wizyta kontrolna oraz biopsja tarczycy. Prywatna praktyka lekarska Grzegorz Erbert."
+        canonical="https://erbert.pl/cennik"
+      />
     <div className="w-full pb-24 pt-12 md:pt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
@@ -197,5 +204,6 @@ export default function PricingPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }

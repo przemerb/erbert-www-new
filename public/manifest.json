@@ -1,0 +1,16 @@
+{
+  "name": "Endokrynolog Grzegorz Erbert",
+  "short_name": "Erbert Endokrynolog",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0097B3",
+  "lang": "pl",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ]
+}
