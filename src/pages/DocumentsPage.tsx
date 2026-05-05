@@ -54,6 +54,7 @@ export default function DocumentsPage() {
 
         <div className="grid lg:grid-cols-12 gap-8">
           {/* Prawa i Regulaminy */}
+          <h2 className="sr-only">Dokumenty i partnerzy medyczni</h2>
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}

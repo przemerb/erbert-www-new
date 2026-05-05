@@ -27,6 +27,7 @@ export default function PricingPage() {
           ></motion.div>
         </div>
 
+        <h2 className="sr-only">Dostępne usługi i ceny</h2>
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {/* Pakiet 1 */}
           <motion.div

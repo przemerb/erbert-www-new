@@ -45,26 +45,6 @@ export default function HomePage() {
       text: "Polecam serdecznie bardzo miły lekarz, wysłucha doradzi. Po tylu endokrynologach w końcu chyba znalazłam właściwego.",
       stars: 5,
     },
-    {
-      name: "Marta Pałyga",
-      text: "Pan Doktor to Profesjonalista w każdym calu. Rzeczowo i zrozumiale odpowiada na każde pytanie, bez pośpiechu wyjaśniając Pacjentowi wszystkie niejasności. Wieloletnia już współpraca.",
-      stars: 5,
-    },
-    {
-      name: "Mos Kit",
-      text: "Przemiły lekarz i bardzo dobry specjalista, serdecznie polecam.",
-      stars: 5,
-    },
-    {
-      name: "Sławomir Jurczyk",
-      text: "Szczerze, otwarcie można porozmawiać, na każde pytanie odpowie bardzo obszernie, zrozumiale, bardzo polecam, świetny lekarz.",
-      stars: 5,
-    },
-    {
-      name: "Natalia Parzonka",
-      text: "Lekarz z którym można od serca porozmawiać, bardzo okej. Polecam.",
-      stars: 5,
-    },
   ];
 
   return (
@@ -78,14 +58,26 @@ export default function HomePage() {
       <div className="w-full pb-16">
       {/* Hero Section */}
       <section className="relative -mt-20 md:-mt-24 min-h-[85vh] md:min-h-[90vh] flex items-end md:items-center overflow-hidden mb-12 md:mb-20">
-        <img
-          src="/assets/images/background.jpg"
-          alt="Tło gabinetu"
-          width={1920}
-          height={1280}
-          loading="eager"
-          className="absolute inset-0 w-full h-full object-cover object-[30%_center] md:object-center"
-        />
+        <picture className="absolute inset-0 w-full h-full">
+          <source
+            srcSet="/assets/images/background-640.webp 640w, /assets/images/background-800.webp 800w, /assets/images/background-1200.webp 1200w, /assets/images/background-1920.webp 1920w"
+            sizes="100vw"
+            type="image/webp"
+          />
+          <source
+            srcSet="/assets/images/background.jpg"
+            type="image/jpeg"
+          />
+          <img
+            src="/assets/images/background.jpg"
+            alt="Tło gabinetu"
+            width={1920}
+            height={1280}
+            loading="eager"
+            fetchPriority="high"
+            className="absolute inset-0 w-full h-full object-cover object-[30%_center] md:object-center"
+          />
+        </picture>
         {/* Gradient */}
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/50 to-slate-900/20 md:bg-gradient-to-r md:from-slate-900/80 md:via-slate-900/50 md:to-transparent"></div>
 
@@ -174,7 +166,7 @@ export default function HomePage() {
                 <h3 className="text-xl font-bold text-slate-800 mb-3">
                   {service.title}
                 </h3>
-                <p className="text-slate-500 leading-relaxed">{service.desc}</p>
+                <p className="text-slate-600 leading-relaxed">{service.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -195,14 +187,25 @@ export default function HomePage() {
           >
             <div className="relative">
               <div className="absolute inset-0 bg-brand/10 rounded-[30px] md:rounded-[40px] transform translate-x-3 translate-y-3 md:translate-x-4 md:translate-y-4"></div>
-              <img
-                src="/assets/images/profile_picture.jpg"
-                alt="Grzegorz Erbert"
-                width={600}
-                height={600}
-                loading="lazy"
-                className="relative rounded-[30px] md:rounded-[40px] shadow-lg max-w-md w-full object-cover aspect-square"
-              />
+              <picture className="relative rounded-[30px] md:rounded-[40px] shadow-lg max-w-md w-full block overflow-hidden aspect-square">
+                <source
+                  srcSet="/assets/images/profile_picture-400.webp 400w, /assets/images/profile_picture-600.webp 600w, /assets/images/profile_picture-800.webp 800w"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  type="image/webp"
+                />
+                <source
+                  srcSet="/assets/images/profile_picture.jpg"
+                  type="image/jpeg"
+                />
+                <img
+                  src="/assets/images/profile_picture.jpg"
+                  alt="Grzegorz Erbert"
+                  width={600}
+                  height={600}
+                  loading="lazy"
+                  className="relative rounded-[30px] md:rounded-[40px] shadow-lg max-w-md w-full object-cover aspect-square"
+                />
+              </picture>
             </div>
           </motion.div>
           <motion.div
@@ -243,7 +246,7 @@ export default function HomePage() {
 
         {/* Marquee */}
         <div className="relative w-full overflow-hidden mb-12">
-          <div className="flex gap-6 animate-marquee w-max">
+          <div className="flex gap-6 animate-marquee w-max will-change-transform">
             {[...reviews, ...reviews].map((review, idx) => (
               <div
                 key={idx}
@@ -313,7 +316,7 @@ export default function HomePage() {
                 <MapPin size={32} />
               </div>
               <div>
-                <h4 className="text-xl font-bold text-slate-800 mb-2">Adres</h4>
+                <h3 className="text-xl font-bold text-slate-800 mb-2">Adres</h3>
                 <p className="text-lg text-slate-600">
                   ul. Waryńskiego 4/4
                   <br />
@@ -330,9 +333,9 @@ export default function HomePage() {
                 <Clock size={32} />
               </div>
               <div>
-                <h4 className="text-xl font-bold text-slate-800 mb-2">
+                <h3 className="text-xl font-bold text-slate-800 mb-2">
                   Godziny przyjęć
-                </h4>
+                </h3>
                 <p className="text-lg text-slate-600">
                   Zgodnie z wcześniejszą rejestracją telefoniczną.
                 </p>

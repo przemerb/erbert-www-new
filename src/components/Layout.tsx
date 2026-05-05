@@ -213,7 +213,7 @@ export default function Layout() {
               ))}
             </ul>
           </div>
-          <div className="border-t border-slate-700 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-400 text-sm">
+          <div className="border-t border-slate-700 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500 text-sm">
             <p>© {new Date().getFullYear()} Prywatna Praktyka Lekarska Grzegorz Erbert.</p>
             <p>Wszystkie prawa zastrzeżone.</p>
           </div>

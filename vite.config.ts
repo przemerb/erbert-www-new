@@ -7,4 +7,18 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id: string) {
+          if (id.includes('node_modules')) {
+            if (id.includes('framer-motion')) {
+              return 'animation';
+            }
+            return 'vendor';
+          }
+        },
+      },
+    },
+  },
 });
