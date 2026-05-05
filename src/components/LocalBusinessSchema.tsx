@@ -4,6 +4,7 @@ export default function LocalBusinessSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Physician",
+    "@id": "https://erbert.pl/#business",
     "name": "Grzegorz Erbert – Endokrynolog",
     "image": "https://erbert.pl/assets/images/profile_picture.jpg",
     "url": "https://erbert.pl",

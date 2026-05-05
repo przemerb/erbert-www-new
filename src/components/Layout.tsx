@@ -65,6 +65,8 @@ export default function Layout() {
             <img 
               src="/assets/images/logo_ciemne.svg" 
               alt="Logo Endokrynolog Grzegorz Erbert" 
+              width={518}
+              height={151}
               className={`transition-all duration-300 ${scrolled ? 'h-10 lg:h-12' : 'h-14 lg:h-20'}`}
             />
           </Link>
@@ -92,6 +94,8 @@ export default function Layout() {
           <button
             className="lg:hidden p-2 text-slate-600 hover:text-brand transition-colors"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label={isMenuOpen ? "Zamknij menu" : "Otwórz menu"}
+            aria-expanded={isMenuOpen}
           >
             {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
@@ -150,6 +154,7 @@ export default function Layout() {
               <button 
                 onClick={() => setShowPhoneModal(false)}
                 className="absolute top-4 right-4 md:top-6 md:right-6 text-slate-400 hover:text-slate-800 transition-colors bg-slate-100 p-2 rounded-full"
+                aria-label="Zamknij okno"
               >
                 <X size={24} />
               </button>
@@ -193,6 +198,8 @@ export default function Layout() {
               <img 
                 src="/assets/images/logo_jasne.svg" 
                 alt="Logo Endokrynolog Grzegorz Erbert" 
+                width={336}
+                height={115}
                 className="h-16 lg:h-20 opacity-90 hover:opacity-100 transition-opacity"
               />
             </Link>

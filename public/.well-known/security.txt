@@ -1,0 +1,9 @@
+# Security Contact
+Contact: mailto:security@erbert.pl
+
+# Expiration date (1 year from creation)
+Expires: 2027-05-04T00:00:00.000Z
+
+Preferred-Languages: pl, en
+Canonical: https://erbert.pl/.well-known/security.txt
+Policy: https://erbert.pl/dokumenty

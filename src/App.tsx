@@ -10,11 +10,13 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Symulacja ładowania dla czystego efektu wejścia
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 500);
-    return () => clearTimeout(timer);
+    const handleLoad = () => setIsLoading(false);
+    if (document.readyState === 'complete') {
+      handleLoad();
+    } else {
+      window.addEventListener('load', handleLoad);
+    }
+    return () => window.removeEventListener('load', handleLoad);
   }, []);
 
   return (
@@ -36,6 +38,8 @@ function App() {
               <img 
                 src="/assets/images/logo_ciemne.svg" 
                 alt="Logo Endokrynolog Grzegorz Erbert" 
+                width={518}
+                height={151}
                 className="h-16 md:h-24 lg:h-28 drop-shadow-sm"
               />
             </motion.div>

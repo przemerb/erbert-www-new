@@ -5,6 +5,8 @@ interface SEOProps {
   description?: string;
   canonical?: string;
   ogImage?: string;
+  ogImageWidth?: number;
+  ogImageHeight?: number;
 }
 
 export default function SEO({
@@ -12,6 +14,8 @@ export default function SEO({
   description = 'Grzegorz Erbert – Endokrynolog w Kluczborku. Specjalizuję się w diagnozowaniu i leczeniu schorzeń hormonalnych, oferując indywidualne podejście do każdego pacjenta.',
   canonical = 'https://erbert.pl',
   ogImage = 'https://erbert.pl/assets/images/profile_picture.jpg',
+  ogImageWidth = 2996,
+  ogImageHeight = 2996,
 }: SEOProps) {
   const fullTitle = title.includes('Grzegorz Erbert') ? title : `${title} | Grzegorz Erbert`;
 
@@ -27,6 +31,8 @@ export default function SEO({
       <meta property="og:type" content="website" />
       <meta property="og:url" content={canonical} />
       <meta property="og:image" content={ogImage} />
+      <meta property="og:image:width" content={String(ogImageWidth)} />
+      <meta property="og:image:height" content={String(ogImageHeight)} />
       <meta property="og:locale" content="pl_PL" />
       <meta property="og:site_name" content="Endokrynolog Grzegorz Erbert" />
 

@@ -81,6 +81,9 @@ export default function HomePage() {
         <img
           src="/assets/images/background.jpg"
           alt="Tło gabinetu"
+          width={1920}
+          height={1280}
+          loading="eager"
           className="absolute inset-0 w-full h-full object-cover object-[30%_center] md:object-center"
         />
         {/* Gradient */}
@@ -195,6 +198,9 @@ export default function HomePage() {
               <img
                 src="/assets/images/profile_picture.jpg"
                 alt="Grzegorz Erbert"
+                width={600}
+                height={600}
+                loading="lazy"
                 className="relative rounded-[30px] md:rounded-[40px] shadow-lg max-w-md w-full object-cover aspect-square"
               />
             </div>
